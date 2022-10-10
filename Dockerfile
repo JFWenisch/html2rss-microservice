@@ -12,6 +12,6 @@ RUN useradd --create-home -s /bin/bash user && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 
 
-COPY --chown=user:user target/flight-status-backend*.jar /flight-status-backend.jar
+COPY --chown=user:user target/*.jar /html2rss.jar
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-ENTRYPOINT ["java","-jar","flight-status-backend.jar"]
+ENTRYPOINT ["java","-jar","html2rss.jar"]
