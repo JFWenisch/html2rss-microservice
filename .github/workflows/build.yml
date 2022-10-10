@@ -60,8 +60,8 @@ jobs:
         context: .
         push: true
         tags: |
-          ghcr.io/jfwenisch/flightstatus-backend:${{needs.version.outputs.tag}}
-          ghcr.io/jfwenisch/flightstatus-backend:latest
+          ghcr.io/jfwenisch/html2rss-microservice:${{needs.version.outputs.tag}}
+          ghcr.io/jfwenisch/html2rss-microservice:latest
         labels: ${{ steps.meta.outputs.labels }}
 
  
