@@ -14,4 +14,4 @@ RUN useradd --create-home -s /bin/bash user && \
 
 COPY --chown=user:user target/*.jar /html2rss.jar
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-ENTRYPOINT ["java","-jar","html2rss.jar"]
+ENTRYPOINT ["java","-jar","/html2rss.jar"]
