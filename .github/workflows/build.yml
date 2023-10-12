@@ -55,7 +55,7 @@ jobs:
         images: ghcr.io/jfwenisch/html2rss-microservice
 
     - name: Build and push Docker image
-      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      uses: docker/build-push-action@v2
       with:
         context: .
         push: true
@@ -65,11 +65,11 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
     
     - name: Build and push Docker image (ARM)
-      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        platforms: arm64v8
+        platforms: linux/arm/v7
         tags: |
           ghcr.io/jfwenisch/html2rss-microservice:${{needs.version.outputs.tag}}-arm
         labels: ${{ steps.meta.outputs.labels }}
