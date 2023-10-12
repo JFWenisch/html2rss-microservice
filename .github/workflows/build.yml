@@ -63,6 +63,16 @@ jobs:
           ghcr.io/jfwenisch/html2rss-microservice:${{needs.version.outputs.tag}}
           ghcr.io/jfwenisch/html2rss-microservice:latest
         labels: ${{ steps.meta.outputs.labels }}
+    
+    - name: Build and push Docker image (ARM)
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      with:
+        context: .
+        push: true
+        platforms: linux/arm/v7
+        tags: |
+          ghcr.io/jfwenisch/html2rss-microservice:${{needs.version.outputs.tag}}-arm
+        labels: ${{ steps.meta.outputs.labels }}
 
  
   release:
